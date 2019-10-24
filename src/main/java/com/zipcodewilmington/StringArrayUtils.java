@@ -1,5 +1,7 @@
 package com.zipcodewilmington;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -8,7 +10,8 @@ public class StringArrayUtils {
      * @param array array of String objects
      * @return first element of specified array
      */ // TODO
-    public static String getFirstElement(String[] array) {
+    public static String getFirstElement(String[] array)
+    {
         return array[0];
     }
 
@@ -16,7 +19,8 @@ public class StringArrayUtils {
      * @param array array of String objects
      * @return second element in specified array
      */
-    public static String getSecondElement(String[] array) {
+    public static String getSecondElement(String[] array)
+    {
         return array[1];
     }
 
@@ -24,16 +28,21 @@ public class StringArrayUtils {
      * @param array array of String objects
      * @return last element in specified array
      */ // TODO
-    public static String getLastElement(String[] array) {
-        return null;
+    public static String getLastElement(String[] array)
+    {
+        int lastElement = array.length - 1;
+        return array[lastElement];
+
     }
 
     /**
      * @param array array of String objects
      * @return second to last element in specified array
      */ // TODO
-    public static String getSecondToLastElement(String[] array) {
-        return null;
+    public static String getSecondToLastElement(String[] array)
+    {
+        int secondToLast = array.length - 2;
+        return array[secondToLast];
     }
 
     /**
@@ -42,14 +51,21 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        return false;
+
+        Boolean contains = null;
+        for (int i = 0; i < array.length - 1; i++) {
+            contains = (array[i].equals(value));
+
+
+        }
+        return contains;
     }
 
     /**
      * @param array of String objects
      * @return an array with identical contents in reverse order
      */ // TODO
-    public static String[] reverse(String[] array) {
+    public static String[] reverse (String[] array) {
         return null;
     }
 
