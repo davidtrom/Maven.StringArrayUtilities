@@ -2,6 +2,12 @@ package com.zipcodewilmington;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.lang.StringBuilder;
+import java.lang.String;
+
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -52,29 +58,43 @@ public class StringArrayUtils {
      */ // TODO
     public static boolean contains(String[] array, String value) {
 
-        Boolean contains = null;
+        Boolean contains;
         for (int i = 0; i < array.length - 1; i++) {
-            contains = (array[i].equals(value));
-
-
+            array[i].equals(value);
+            return true;
         }
-        return contains;
+        return false;
     }
 
     /**
      * @param array of String objects
      * @return an array with identical contents in reverse order
      */ // TODO
-    public static String[] reverse (String[] array) {
-        return null;
+    public static String[] reverse (String[] array)
+    {
+
+        String[] result = new String[array.length];
+        //int length = array.length;
+
+        for (int i = array.length - 1, j = 0; i >= 0; i--, j++)
+        {
+            result[j] = array[i];
+        }
+
+        return result;
+
+        //return arr.toArray(new String[arr.size()]);
     }
 
     /**
+     *
      * @param array array of String objects
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        return false;
+        String[] reversedArray = reverse(array);
+        return (Arrays.equals(reversedArray, array));
+
     }
 
     /**
@@ -82,6 +102,19 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
+        String[] alphabet = new String[26];
+
+        alphabet = {}
+
+
+        for (String i = "z", j=0; i >= 'a' ; i--, j++) {
+            alphabet[j] = array[i];
+        }
+
+        for (i=0; i<=alphabet.length)
+
+            for (i=0; )
+
         return false;
     }
 
