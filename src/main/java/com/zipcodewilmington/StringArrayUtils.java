@@ -1,11 +1,14 @@
 package com.zipcodewilmington;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
-
+import org.apache.commons.lang3.ArrayUtils;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.lang.StringBuilder;
 import java.lang.String;
+import java.lang.Object;
+//import org.apache.ArrayUtils
 
 
 /**
@@ -144,18 +147,49 @@ public class StringArrayUtils {
      * @param valueToRemove value to remove from array
      * @return array with identical contents excluding values of `value`
      */ // TODO
-    public static String[] removeValue(String[] array, String valueToRemove)
-    {
+    public static String[] removeValue(String[] array, String valueToRemove) {
 
-    return null;
+        //ArrayList<String> listArray =  ArrayList<String>(array);
+        //listArray = array.to
+        String holder = "";
+
+        for (int i = 0; i < array.length ; i++) {
+
+            if (!array[i].equals(valueToRemove)) {
+                holder += array[i] + " ";
+            }
+        }
+
+        //ing[] backToArray = (String[]) listArray.toArray();
+
+        String[] result = holder.split(" ");
+        return result;
+
     }
 
     /**
      * @param array array of chars
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
-    public static String[] removeConsecutiveDuplicates(String[] array) {
-        return null;
+    public static String[] removeConsecutiveDuplicates(String[] array)
+    {
+
+        int j=0;
+        //String arrayToString = array.toString();
+        //StringBuilder myString = new StringBuilder();
+        for (int i = 1; i< array.length; i++) {
+
+            if (array[j] != array[i])
+            {
+                j++;
+                array[j] = array[i];
+            }
+
+        }
+        //myString.append(arrayToString + " ");
+        //String result = myString.toString();
+
+        return Arrays.copyOfRange(array, 0, j+1);  //result.split(" ");
     }
 
     /**
@@ -163,6 +197,22 @@ public class StringArrayUtils {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
+        StringBuilder result = new StringBuilder();
+        //String[array.length];
+        boolean visited[] = new boolean[array.length];
+        for (int i = 0; i<array.length; i++) {
+            if (!visited[i]) {
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[i].equals(array[j])) {
+                        result += array[i];
+                        visited[j] = true;
+
+                    }
+                }
+            }
+
+        }
+
         return null;
     }
 
