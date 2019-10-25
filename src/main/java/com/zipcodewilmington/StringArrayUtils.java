@@ -102,20 +102,22 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
-        String[] alphabet = new String[26];
+        //char[] alphabet = new char[26]
+        String listedArray = String.join("", array).toLowerCase();
 
-        alphabet = {}
-
-
-        for (String i = "z", j=0; i >= 'a' ; i--, j++) {
-            alphabet[j] = array[i];
+        String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+                "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        //String[] reverseAlphabet = "zyxwvutsrqponmlkjihgfedcba".split(" ");
+        if (listedArray.length() < 26) {
+            return false;
         }
 
-        for (i=0; i<=alphabet.length)
+        for (int i = 0; i < alphabet.length - 1; i++)
+            if (!listedArray.contains(alphabet[i])) {
+                return false;
+            }
 
-            for (i=0; )
-
-        return false;
+        return true;
     }
 
     /**
@@ -123,8 +125,18 @@ public class StringArrayUtils {
      * @param value value to check array for
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
-    public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+    public static int getNumberOfOccurrences(String[] array, String value)
+    {
+        int trueCounter = 0;
+        for(int i = 0; i < array.length-1; i++)
+        {
+            if(array[i]).equals(value)
+            {
+                counter++;
+            }
+
+        }
+        return counter;
     }
 
     /**
@@ -132,8 +144,10 @@ public class StringArrayUtils {
      * @param valueToRemove value to remove from array
      * @return array with identical contents excluding values of `value`
      */ // TODO
-    public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+    public static String[] removeValue(String[] array, String valueToRemove)
+    {
+
+    return null;
     }
 
     /**
