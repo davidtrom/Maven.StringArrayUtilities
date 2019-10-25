@@ -60,8 +60,8 @@ public class StringArrayUtils {
 
         Boolean contains;
         for (int i = 0; i < array.length - 1; i++) {
-            array[i].equals(value);
-            return true;
+            return array[i].equals(value);
+
         }
         return false;
     }
@@ -127,10 +127,10 @@ public class StringArrayUtils {
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value)
     {
-        int trueCounter = 0;
-        for(int i = 0; i < array.length-1; i++)
+        int counter = 0;
+        for(String word: array)
         {
-            if(array[i]).equals(value)
+            if(word.equals(value))
             {
                 counter++;
             }
